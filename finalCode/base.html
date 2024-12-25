@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adiya Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script>
+    emailjs.init("xv2AHEY201obXYNZa");
+  </script>
+  <script>
+    function sendMail(event) {
+  event.preventDefault();
+  
+  const serviceId = "service_f1099g1";
+  const templateId = "template_pi9t8zk";
+  const params = {
+    sendername: document.querySelector("#name").value,
+    senderemail: document.querySelector("#email").value,
+    subject: document.querySelector("#subject").value,
+    message: document.querySelector("#message").value
+  };
+  
+  emailjs.send(serviceId, templateId, params)
+    .then(function () {
+      alert('Message sent successfully!');
+    })
+    .catch(function (error) {
+      alert('Failed to send message. Please try again later.');
+      console.error(error);
+    });
+}
+
+</script>
+<script src="script.js"></script>
+</head>
+<body>
+   
+  <!-- Welcome Modal -->
+  <div id="welcome-modal" class="modal">
+    <div class="modal-content">
+      <h1>Welcome to My Portfolio!</h1>
+      <p>Explore my projects and learn more about me!</p>
+      <button onclick="closeWelcomeModal()">Start</button>
+    </div>
+  </div>
+
+  <div class="header">
+    <nav>
+        <a href="#" onclick="showContent('projects')">Projects</a>
+        <a href="#" onclick="showContent('about')">About</a>
+        <a href="#" onclick="showContent('contact')">Contact</a>
+    </nav>
+    <div class="site-title">My Portfolio</div>
+    <div class="icons">
+      <a href="https://telegram/takkanchik">
+        <img src="images/telegram-64.png">
+    </a>
+    <a href="https://www.instagram.com/dio_skibidi/profilecard/?igsh=Y3V4bmJydnRkaWFx">
+        <img src="images/pic.png">
+    </a>
+    <a href="https://github.com/Adiya-sigma">
+        <img src="images\pic2.png">
+    </a>
+    </div>
+</div>
+
+  <div id="main-content">
+    <h1>Welcome to Adiya's Portfolio</h1>
+    <p>There are some of my arts and sketches!</p>
+  </div>
+
+    
+            
+<div id="projects-section">
+ <div class="projects">
+    <div class="project-container" onclick="showProjectDetails('Kakashi Hatake', 'This is my favourite character from Naruto!')">
+        <img src="images\p2.jpg" >
+            <div class="project-info">Kakashi Hatake</div>
+    </div>           
+    <div class="project-container" onclick="showProjectDetails('Zhoma', 'My friend - Zhoma.')">
+        <img src="images\p4.jpg">
+            <div class="project-info">Zhoma</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Edgar&Collet', 'Characters from my favourite game - Brawl Stars')">
+        <img src="images\p9.jpg">
+            <div class="project-info">Edgar&Collet</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Ocs', 'My original characters!')">
+        <img src="images\p7.jpg">
+            <div class="project-info">Ocs</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Sasuke Uchiha', 'Another character from Naruto')">
+        <img src="images\p1.jpg">
+            <div class="project-info">Sasuke Uchiha</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Muslim&Bekz', 'My friends!')">
+        <img src="images\p3.jpg">
+            <div class="project-info">Muslim&Bekz</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Jin Yuan', 'Character from the game Honkai: Star Rail')">
+        <img src="images\p5.jpg">
+            <div class="project-info">Jin Yuan</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Kim Jihu', 'Also one of my original characters >.<')">
+        <img src="images\p6.jpg">
+            <div class="project-info">Kim Jihu</div>
+    </div>
+    <div class="project-container" onclick="showProjectDetails('Vitaliy', 'He is my old friend T.T')">
+        <img src="images\p8.jpg">
+            <div class="project-info">Vitaliy</div>
+    </div>
+    </div>
+</div>
+
+<div id="about-section" class="about-contact">
+    <h1>About Me</h1>
+    <p>Hi there! My name is Adiya, and I'm from Aktau. I'm beginer artist and there some of my arts and scetches. Now I'm studying Digital Managment and design at Narxoz University in Almaty!</p>
+  </div>
+
+  <div id="contact-section" class="about-contact">
+    <h1>Contact Me</h1>
+    <form id="contact-form" onsubmit="sendMail(event);">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+      
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Send</button>
+    </form>
+    
+  </div>
+  
+
+<footer>
+    <p>© 2024 Adiya's Portfolio</p>
+  </footer>
+</body>
+</html>

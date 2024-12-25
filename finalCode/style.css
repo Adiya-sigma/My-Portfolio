@@ -1,0 +1,231 @@
+body {
+  background-color: #fef7c3;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #b2d6a2;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+.header nav {
+  background-color: #f296a4;
+  display: flex;
+  gap: 20px;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: #4f3040;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+}
+
+.header nav a:hover {
+  background-color: #b2d6a2;
+  color: #f296a4;
+  border-radius: 5px;
+}
+.icons {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+.icons a img {
+    width: 20px !important; /* Устанавливаем ширину */
+    height: 20px !important; /* Устанавливаем высоту */
+    object-fit: contain; /* Убедитесь, что иконки сохраняют пропорции */
+}
+
+.icons a {
+    padding: 2px; /* Уменьшение отступов вокруг иконок */
+}
+.site-title {
+  margin-left: 20px;
+  margin-right: 600px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f296a4;
+}
+
+nav a {
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  background-color: #b2d6a2;
+  color: #fff;
+  border-radius: 5px;
+}
+
+#main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b2d6a2;
+  text-align: center;
+  padding: 0 20px;
+  transition: opacity 0.5s ease;
+}
+
+#projects-section {
+  padding: 50px 20px;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-container {
+  display: inline-block;
+  margin: 10px;
+  background-color: #fef7c3;
+  border: 2px solid #b2d6a2;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-bottom: 2px solid #b2d6a2;
+}
+
+.project-container:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+.project-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.project-container:hover .project-info {
+    opacity: 1;
+}
+
+
+
+footer {
+  background-color: #b2d6a2;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fef7c3;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+}
+
+.modal-content h1 {
+  color: #f296a4;
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  background: #b2d6a2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background: #98c28d;
+}
+#about-section,
+#contact-section {
+  display: none; /* Скрытие секций */
+}
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#contact-form label {
+  font-weight: bold;
+}
+
+#contact-form input, #contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact-form button {
+  background-color: #b2d6a2;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact-form button:hover {
+  background-color: #98c28d;
+}
+#main-content,
+#projects-section,
+#about-section,
+#contact-section {
+  padding-top: 80px; /* Высота хедера + небольшой запас */
+}
